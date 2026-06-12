@@ -27,8 +27,8 @@ rank-bm25==0.2.2
 
 # Document Processing
 PyMuPDF==1.24.5
-arxiv==2.1.0
-requests==2.31.0
+arxiv>=2.1.0
+requests>=2.32.2
 httpx==0.27.0
 aiohttp==3.9.5
 tenacity==8.3.0
