@@ -19,10 +19,10 @@ format:
 	isort src/ cli/ tests/ config/
 
 test:
-	pytest tests/ -v --tb=short
+	PYTHONPATH=. pytest tests/ -v --tb=short
 
 test-fast:
-	pytest tests/test_arxiv.py tests/test_rag.py -v --tb=short -x
+	PYTHONPATH=. pytest tests/test_arxiv.py tests/test_rag.py -v --tb=short -x
 
 # ── Run ────────────────────────────────────────────────────────────────────────
 run-api:
