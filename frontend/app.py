@@ -17,7 +17,7 @@ import requests
 import streamlit as st
 import plotly.graph_objects as go
 
-API_BASE = "http://localhost:8000"
+API_BASE = "http://localhost:8001"
 
 # ── Page config ────────────────────────────────────────────────────────────────
 st.set_page_config(
@@ -44,13 +44,17 @@ st.markdown("""
 
 def get_health():
     try:
-        return requests.get(f"{API_BASE}/health", timeout=3).json()
+        resp = requests.get(f"{API_BASE}/health", timeout=3)
+        resp.raise_for_status()
+        return resp.json()
     except Exception:
         return None
 
 def get_sources():
     try:
-        return requests.get(f"{API_BASE}/sources", timeout=5).json()
+        resp = requests.get(f"{API_BASE}/sources", timeout=5)
+        resp.raise_for_status()
+        return resp.json()
     except Exception:
         return {"sources": [], "total": 0}
 

@@ -26,7 +26,7 @@ test-fast:
 
 # ── Run ────────────────────────────────────────────────────────────────────────
 run-api:
-	uvicorn src.api.app:app --host 0.0.0.0 --port 8000 --reload
+	uvicorn src.api.app:app --host 0.0.0.0 --port 8001 --reload
 
 run-ui:
 	streamlit run frontend/app.py --server.port 8501
